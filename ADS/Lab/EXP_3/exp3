@@ -1,0 +1,83 @@
+/*Create a class Rectangle in to represent a Rectangle in a xy plane the object should be able to give the following data:
+1.it's height
+2.it's width
+3.it's area
+4.whether it's area is greater them other Rectangle object
+5.whether it is overlapping with the other Rectangle object
+Try to follow oops as much as possible.*/
+#include<iostream>
+using namespace std;
+
+class RECT
+{
+	float x,y,h,w;
+	public:
+	RECT(float hi,float wi,float xi=0,float yi=0)
+	{
+	h=hi;
+	w=wi;
+	x=xi;
+	y=yi;
+	}
+	float getheight()
+	{
+	return h;
+	}
+	float getwidth()
+	{
+	return w;
+	}
+	float getarea()
+	{
+	return h*w;
+	}
+	bool check_area(RECT r)
+	{
+	if(getarea()>r.getarea())
+	return true;
+	return false;
+	}
+	bool overlap(RECT r)
+	{
+	if(
+	   (x  <r.x     &&r.x    <x+w)
+	 &&(y-h<r.y     &&r.y    <y  )
+	 ||(x  <r.x+r.w &&r.x+r.w<x+w)
+	 &&(y-h<r.y     &&r.y    <y  )
+	 ||(x  <r.x     &&r.x    <x+w)
+	 &&(y-h<r.y-r.h &&r.y-r.h<y  )
+	 ||(x  <r.x+r.w &&r.x+r.w<x+w)
+	 &&(y-h<r.y-r.h &&r.y-r.h<y  )
+	 )
+	return true;
+	return false;
+	}
+
+};
+
+int main()
+{
+RECT r1(45,5,6,7);
+cout<<"Rectangle r1 has:\nHeight = "<<r1.getheight()<<"\nWidth = "<<r1.getwidth()<<endl; 
+
+RECT r2(41,5,6,7);
+cout<<"Rectangle r2 has:\nHeight = "<<r2.getheight()<<"\nWidth = "<<r2.getwidth()<<endl; 
+
+if(r1.check_area(r2))
+cout<<"Area of Rectangle r1 is greater than r2"<<endl;
+
+if(r1.overlap(r2))
+cout<<"Rectangle r1 overlaps r2"<<endl;
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
