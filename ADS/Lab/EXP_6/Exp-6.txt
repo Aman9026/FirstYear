@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+ 
+class complex
+{
+	int r, i;
+	public:
+	complex()
+	{
+ 
+	}
+	complex(int a, int b)
+	{
+		r=a;
+		i=b;
+	}
+	void disp()
+	{
+		cout<<"Real="<<r<<" and imaginary="<<i;
+		cout<<endl;
+	}
+	complex operator-()
+	{
+		complex t;
+		t.r=-r;
+		t.i=-i;
+		return t;
+	}
+	void compare(complex c1, complex c2)
+	{
+		int p,q;
+		p=((c1.r)*(c1.r)+(c1.i)*(c1.i));
+		q=((c2.r)*(c2.r)+(c2.i)*(c2.i));
+		if(p>q)
+		{
+			cout<<"c1 is greater";
+		}
+		else
+		        cout<<"c2 is greater";
+	}
+	friend complex operator+(complex c1, complex c2);
+};
+	complex operator+(complex c1, complex c2)
+	{
+		complex t;
+		t.r=c1.r+c2.r;
+		t.i=c1.i+c2.i;
+		return t;
+	}
+int main()
+{
+	complex c1(4,3),c2(2,1),c3,c4,c5;
+	c3=c1+c2;
+	c3.disp();
+	c4=-c3;
+	c4.disp();
+            c5.compare(c1, c2);
+}
