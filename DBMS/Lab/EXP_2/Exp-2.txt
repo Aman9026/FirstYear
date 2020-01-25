@@ -1,0 +1,17 @@
+select name from client_master664a;
+select * from client_master664a;
+select name,city,state from client_master664a;
+select description from product_master664a;
+select name from client_master664a where city = ‘Mumbai’;
+select salesmanname from salesman_master664a where salamt = ‘3000’;
+update client_master664a set city = 'Bangalore' where clientno = 'C00005';
+update client_master664a set baldue = '1000' where clientno = 'C00001';
+update product_master664a set costprice = '950' where description = 'Trousers';
+update salesman_master664a set city = 'Pune';
+delete from salesman_master664a where salamt = '3500';
+delete from product_master664a where qtyonhand = '100';
+delete from client_master664a where state = 'Tamil Nadu';
+alter table client_master664a ADD telephone integer;
+alter table product_master664a MODIFY sellprice decimal(10,2);
+rename salesman_master664a to sman_master664;
+drop table client_master664a;
