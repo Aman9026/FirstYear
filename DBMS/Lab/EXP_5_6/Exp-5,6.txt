@@ -1,0 +1,30 @@
+create table supplier664(scode varchar(10) NOT NULL,sname varchar(20),scity varchar(15),turnover int, PRIMARY KEY(scode));
+create table part664(pcode varchar(10) NOT NULL,weigh int,color varchar(10),cost int,sellingprice int, PRIMARY KEY(pcode));
+create table supplier_part664(scode varchar(20),pcode varchar(20),qty int, FOREIGN KEY(scode) REFERENCES supplier664(scode), FOREIGN KEY(pcode) REFERENCES part664(pcode));
+
+
+insert into supplier664 values('S0001','Rahul','Bombay',50);
+insert into supplier664 values('S0002','Ram','Raipur',100);
+insert into supplier664 values('S0003','Rahul','Dehradun',500);
+
+
+insert into part664 values('P0001',25,'Black',30,50);
+insert into part664 values('P0002',30,'White',50,60);
+insert into part664 values('P0003',28,'Green',20,70);
+
+
+insert into supplier_part664 values('S0001','P0001',20);
+insert into supplier_part664 values('S0002','P0002',50);
+insert into supplier_part664 values('S0003','P0003',80);
+
+
+select scode,pcode from supplier664,part664 order by scode;
+select scode,sname from supplier664 where scity ='Bombay' AND turnover = '50';
+select count(*) from supplier664;
+select pcode from part664 where weigh between 25 AND 35;
+select scode from supplier664 where turnover IS NULL;
+select pcode from part664 where cost IN(20,30,40);
+select sum(qty) from supplier_part664 where pcode ='P0002';
+select sname from supplier664 NATURAL JOIN supplier_part664 where pcode='P0002';
+select pcode from part664 where cost >(select AVG (cost) from part664);
+select sname,turnover from supplier664 order by turnover DESC;
