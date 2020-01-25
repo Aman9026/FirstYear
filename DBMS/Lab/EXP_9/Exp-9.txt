@@ -1,0 +1,15 @@
+﻿1)select * from dept664a where deptno not in (select deptno from emp664a group by deptno);
+                                   or
+select * from dept664a where NOT EXISTS (select deptno from emp664a group by deptno);
+
+2) select count (empno),AVG(sal),deptno,job from emp664a group by deptno,job;
+
+3) select max(sal), job from emp664a where job<>'President' group by job;
+
+4) select * from dept664a where deptno in (select deptno from emp664a having count(empno)>=2 group by deptno);
+
+5) select count (empno),deptno from emp664a group by deptno having count (empno)>3;
+
+6) select E.ename,E.deptno,T.sal from emp664a E, (select deptno,MAX(sal) as sal from emp664a group by deptno) T where T.deptno=E.deptno and T.sal=E.sal;
+
+7)select deptno, AVG(sal) from emp664a group by deptno having AVG (sal)<(select AVG(sal)from emp664a);
