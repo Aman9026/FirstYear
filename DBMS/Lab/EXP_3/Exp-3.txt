@@ -1,0 +1,22 @@
+create table client_master664a(clientno varchar(6),name varchar(20) NOT NULL,address1 varchar(30),address2 varchar(30),city varchar(15),pincode integer,state varchar(15),baldue decimal(10,2),PRIMARY KEY(clientno), CHECK(clientno LIKE 'C%'));
+
+
+
+
+create table product_master664a(productno varchar(60) PRIMARY KEY ,description varchar(15) NOT NULL,profitpercent decimal(4,2) NOT NULL,unitmeasure varchar(10) NOT NULL,qtyonhand integer NOT NULL,reorderlvl integer NOT NULL,sellprice decimal(8,2) NOT NULL,costprice decimal(8,2) NOT NULL, CHECK(productno LIKE 'P%'));
+
+
+
+
+create table salesman_master664a(salesmanno varchar(6) PRIMARY KEY,salesmanname varchar(20) NOT NULL,address1 varchar(30) NOT NULL,address2 varchar(30),city varchar(20),pincode integer,state varchar(20),salamt real NOT NULL,tgttoget decimal(6,2) NOT NULL,ytdsales double precision NOT NULL,remarks varchar(60), CHECK(salesmanno LIKE 'S%' AND salamt>0.00 AND tgttoget>0.00));
+
+
+
+
+create table department664a(deptno integer PRIMARY KEY,deptname varchar(20) DEFAULT 'xyz');
+
+
+
+
+create table employee664a(empid integer PRIMARY KEY,ename varchar(20),ssn integer,contactno integer,address varchar(20),dno integer,FOREIGN KEY(dno) REFERENCES department664a(deptno));
+create table teacher664a(teacherno integer,UNIQUE(teacherno));
