@@ -1,0 +1,26 @@
+create table client_master664a(clientno varchar(6),name varchar(20),address1 varchar(30),address2 varchar(30),city varchar(15),pincode integer,state varchar(15),baldue decimal(10,2));
+insert into client_master664a values('C00001','Ivan Bayross','','','Mumbai',400054,'Mahrashtra','15000');
+insert into client_master664a values('C00002','Mamta Muzumdar','','','Madras',780001,'Tamil Nadu','0');
+insert into client_master664a values('C00003','Chhaya Bankar','','','Mumbai',400057,'Maharashtra','5000');
+insert into client_master664a values('C00004','Ashwini Joshi','','','Bangalore',560001,'Karnataka','0');
+insert into client_master664a values('C00005','Hansel Colaco','','','Mumbai',400060,'Maharashtra','2000');
+insert into client_master664a values('C00006','Deepak Sharma','','','Mangalore',560050,'Karnataka','0');
+
+
+
+
+create table product_master664a(productno varchar(60),description varchar(15),profitpercent decimal(4,2),unitmeasure varchar(10),qtyonhand integer,reorderlvl integer,sellprice decimal(8,2),costprice decimal(8,2));
+insert into product_master664a values('&productno','&description','&profitpercent','&unitmeasure','&qtyonhand','&reorderlvl','&sellprice','&costprice');
+insert into product_master664a values('P00001','T-Shirt',5,'Piece',200,50,350,250);
+insert into product_master664a values('P0345','Shirts',6,'Piece',150,50,500,350);
+insert into product_master664a values('P06734','Cotton jeans',5,'Piece',100,20,600,450);
+
+
+
+
+create table salesman_master664a(salesmanno varchar(6),salesmanname varchar(20),address1 varchar(30),address2 varchar(30),city varchar(20),pincode integer,state varchar(20),salamt real,tgttoget decimal(6,2),ytdsales double precision,remarks varchar(60));
+insert into salesman_master664 values('&salesmanno','&salesmanname','&address1','&address2','&city','&pincode','&state','&salamt','&tgttoget','&ytdsales','&remarks');
+insert into salesman_master664a values('S00001','Aman','A/14','Worli','Mumbai',400002,'Maharashtra',3000,100,50,'Good');
+insert into salesman_master664a values('S00002','Omkar','65','Nariman','Mumbai',400001,'Maharashtra',3000,200,100,'Good');
+insert into salesman_master664a values('S00003','Raj','P-7','Bandra','Mumbai',400032,'Maharashtra',3000,200,100,'Good');
+insert into salesman_master664a values('S00004','Ashish','A/5','Juhu','Mumbai',400044,'Maharashtra',3500,200,150,'Good');
