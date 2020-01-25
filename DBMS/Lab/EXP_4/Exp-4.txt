@@ -1,0 +1,20 @@
+create table author664a(authorid varchar(5) PRIMARY KEY,lastname varchar(15) NOT NULL,firstname varchar(15) NOT NULL,email varchar(40),city varchar(15),country varchar(15));
+insert into author664a values('A001','Sharma','Ram','','Raipur','India'); 
+insert into author664a values('A002','Shukla','Rahul','','Dehradun','India'); 
+insert into author664a values('A003','Tewari','Shyam','','Bhilai','India'); 
+insert into author664a values('A004','Mishra','Shashank','','Mumbai','India');
+
+create table book664a(bookid varchar(5) PRIMARY KEY,booktitle varchar(10) NOT NULL,copies int, CHECK(bookid LIKE 'B%' AND copies>2));
+insert into book664a values('B001','Rain',3);
+insert into book664a values('B002','Snow',5);
+insert into book664a values('B003','Sun',4);
+insert into book664a values('B004','Rainbow',6);
+
+create table authorlist664a(authorid varchar(5),bookid varchar(5),role varchar(15), FOREIGN KEY(authorid) REFERENCES author664a(authorid),PRIMARY KEY(authorid,bookid));
+insert into authorlist664a values('A001','B001','');
+insert into authorlist664a values('A002','B002','');
+insert into authorlist664a values('A003','B003','');
+insert into authorlist664a values('A004','B004','');
+
+
+alter table authorlist664a ADD publisher varchar(30);
