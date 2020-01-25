@@ -1,0 +1,32 @@
+create table dept664a(deptno int PRIMARY KEY,dname varchar(20),loc varchar(20));
+insert into dept664a values(10,'Accounting','New York');
+insert into dept664a values(20,'Research','Dallas');
+insert into dept664a values(30,'sales','Chicago');
+insert into dept664a values(40,'Operations','Boston');
+
+create table emp664a(empno int PRIMARY KEY,ename varchar(20),job varchar(20),mgr int,hiredate varchar(20),sal int,comm int,deptno int NOT NULL,FOREIGN KEY(deptno) REFERENCES dept664a(deptno));
+insert into emp664a values(7369,'Smith','Clerk',7902,'17-Dec-80',500,800,20);
+insert into emp664a values(7499,'Allen','salesman',7698,'20-Feb-81',1600,300,30);
+insert into emp664a values(7521,'Ward','salesman',7698,'22-Feb-81',1250,500,30);
+insert into emp664a values(7566,'Jones','Manager',7839,'02-Apr-81','',2975,20);
+insert into emp664a values(7654,'Martin','salesman',7698,'28-Sep-81',1250,1400,30);
+insert into emp664a values(7698,'Blake','Manager',7839,'01-May-81','',2850,30);
+insert into emp664a values(7782,'Clark','Manager',7839,'09-Jun-81','',2450,10);
+insert into emp664a values(7788,'Scott','Analyst',7566,'09-Dec-82','',3000,20);
+insert into emp664a values(7839,'King','President','','17-Nov-81','',5000,10);
+insert into emp664a values(7844,'Turner','salesman',7698,'08-Sep-81',1500,0,30);
+insert into emp664a values(7876,'Adams','Clerk',7788,'12-Jan-83','',1100,20);
+insert into emp664a values(7900,'James', 'Clerk',7698,'03-Dec-81','',950,30);
+insert into emp664a values(7902,'Ford','Analyst',7566,'03-Dec-81','',3000,20);
+insert into emp664a values(7934,'Miller', 'Clerk',7782,'23-Jan-82','',1300,10);
+
+1.select * from emp664a where sal>(select sal from emp664a where ename ='Blake');
+2.select ename from emp664a where job=(select job from emp664a where ename='Allen');
+3.select ename from emp664a where sal=(select sal from emp664a where ename='Ford') OR sal=(select sal from emp664a where ename='Smith')order by ename DESC;
+4.select ename from emp664a where job=(select job from emp664a where ename='Miller') OR sal>(select sal from emp664a where ename='Allen');
+5.select MAX(sal) from emp664a natural join dept664a where dname = 'sales';
+6.select MIN(hiredate) from emp664a where mgr = (select empno from emp664a where ename = 'King');
+7.select E.ename,E.deptno,T.sal from emp664a E, (select deptno,MAX(sal) as sal from emp664a group by deptno) T where T.deptno=E.deptno and T.sal=E.sal;
+8.select ename from emp664a where sal = (select (MAX(sal)+MIN(sal))/2 from emp664a);
+9.select E.ename from emp664a E,(select ename,hiredate from emp664a) T where E.hiredate = T.hiredate and E.ename!=T.ename;
+10.select ename from emp664a E,(select empno,hiredate from emp664a) T where E.hiredate < T.hiredate and mgr = T.empno;
