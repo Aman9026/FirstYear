@@ -1,0 +1,4 @@
+select * from emp664a NATURAL JOIN dept664a;
+select * from emp664a E, dept664a D where E.deptno = D.deptno;
+select * from emp664a LEFT JOIN dept664a ON emp664a.deptno = dept664a.deptno;
+select * from emp664a RIGHT JOIN dept664a ON emp664a.deptno = dept664a.deptno;
