@@ -1,0 +1,77 @@
+
+<!-- saved from url=(0067)https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>var inDapIF=true,inGptIF=true;</script></head><body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"><script src="./jquery.min.js.download"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            $('<br /><div id="wallpaperad_mobile" style="width:100%;text-align: center;"><a href="https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvaqFxGuIRvhwoG7BMKFWpwpXc0Q3KrrhnmPjlVVTH0138u2Lsr1KSlAZpvN843_Axu6oxeloKWw2g--iHOP896QQiLATuC92VuFdhhqkLIC5XOkdw2ioieV_sfp4f0nR-JuLH13lqYeJiVHet0Ai44r-zRGC9vDQffAqGrqpKhRlpXxz0osI9UYbL6y_w4R2Tx-U_F28ncy__668Xc8jNpCjyowznxhofXHdAxF2MtNNxy5c-4AT7O&sai=AMfl-YT0rP-XkqiKWnmNtx8ptGoimDhF_IrWwshcpV_t6d5VGBOSlhB-xFovL3UAkuCwctMje4RYiIYS-2GUtnv-D1hChGyhNMrXKq6zA91ZpdLcuGQkUDNIFwARYb_Rm20aDqWc7g&sig=Cg0ArKJSzAFBK4qRsMlsEAE&urlfix=1&adurl=https://www.mouser.com/ti?utm_source=makerpro&utm_medium=display&utm_campaign=mouser-ti&utm_content=1420x640320x50mobile&utm_id=81729" target="_blank"><img src="https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKC7k7-KYhABGAEyCCE_9XSaf1bQ"></a></div>').insertAfter($(window.parent.document).find("header"));        
+        } else {
+            var main = $(window.parent.document).find(".project-contents");
+
+            var height = main.height();
+
+            $('<div id="wallpaperad" style="background: #CBCCCE url(\'https://tpc.googlesyndication.com/pagead/imgad?id=CICAgKC7k_-0WhABGAEyCEODdFqqf42t\') no-repeat center top; position:absolute; width:100%;z-index:0;cursor:pointer;height:' + height + 'px"></div>').insertAfter($(window.parent.document).find("header"));
+            main.css("margin-top", "70px");
+            main.css("max-width", "1200px");
+            main.css("margin-left", "auto");
+            main.css("margin-right", "auto");
+
+            /* project / article specific */
+            $(window.parent.document).find(".project-contents .container").each(function() {
+                $(this).css("max-width", "1200px");
+                $(this).css("padding-left", "10px");
+                $(this).css("padding-right", "10px");
+                $(this).css("background-color",  "#fff");
+
+                $(window.parent.document).find(".project-contents #project-details, .project-contents #article-details").each(function() {
+                    $(this).css("margin-bottom", "-50px");
+                });
+            });
+
+            var scrolled = false;
+            $(window.parent, window.parent.document).scroll(function () {
+                if(scrolled === false) {
+                    height = main.height();
+                    $(window.parent.document).find("#wallpaperad").css("height", height+"px");
+                    scrolled = true;
+                }
+            });   
+
+
+
+            $("#wallpaperad", window.parent.document).click(function(event){
+                //window.open('https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvaqFxGuIRvhwoG7BMKFWpwpXc0Q3KrrhnmPjlVVTH0138u2Lsr1KSlAZpvN843_Axu6oxeloKWw2g--iHOP896QQiLATuC92VuFdhhqkLIC5XOkdw2ioieV_sfp4f0nR-JuLH13lqYeJiVHet0Ai44r-zRGC9vDQffAqGrqpKhRlpXxz0osI9UYbL6y_w4R2Tx-U_F28ncy__668Xc8jNpCjyowznxhofXHdAxF2MtNNxy5c-4AT7O&sai=AMfl-YT0rP-XkqiKWnmNtx8ptGoimDhF_IrWwshcpV_t6d5VGBOSlhB-xFovL3UAkuCwctMje4RYiIYS-2GUtnv-D1hChGyhNMrXKq6zA91ZpdLcuGQkUDNIFwARYb_Rm20aDqWc7g&sig=Cg0ArKJSzAFBK4qRsMlsEAE&urlfix=1&adurl=https://www.mouser.com/ti?utm_source=makerpro&utm_medium=display&utm_campaign=mouser-ti&utm_content=1420x640320x50mobile&utm_id=81729', '_blank');
+                window.top.location.href = 'https://adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvaqFxGuIRvhwoG7BMKFWpwpXc0Q3KrrhnmPjlVVTH0138u2Lsr1KSlAZpvN843_Axu6oxeloKWw2g--iHOP896QQiLATuC92VuFdhhqkLIC5XOkdw2ioieV_sfp4f0nR-JuLH13lqYeJiVHet0Ai44r-zRGC9vDQffAqGrqpKhRlpXxz0osI9UYbL6y_w4R2Tx-U_F28ncy__668Xc8jNpCjyowznxhofXHdAxF2MtNNxy5c-4AT7O&sai=AMfl-YT0rP-XkqiKWnmNtx8ptGoimDhF_IrWwshcpV_t6d5VGBOSlhB-xFovL3UAkuCwctMje4RYiIYS-2GUtnv-D1hChGyhNMrXKq6zA91ZpdLcuGQkUDNIFwARYb_Rm20aDqWc7g&sig=Cg0ArKJSzAFBK4qRsMlsEAE&urlfix=1&adurl=https://www.mouser.com/ti?utm_source=makerpro&utm_medium=display&utm_campaign=mouser-ti&utm_content=1420x640320x50mobile&utm_id=81729';
+            });
+        }
+    });
+</script>
+
+
+<div style="position: absolute; top: 0px; right: 0px; width: 1px; height: 1px; visibility: hidden; border: none;">
+<img src="./view(1)" style="display:none">
+    <script type="text/javascript">
+        var trackingPixel="";
+        if ( trackingPixel.indexOf("http")==0 ) {
+            document.write('<iframe src="' + trackingPixel + '" height="1" width="1" style="width:1px !important;height 1px !important"></iframe>');
+        }
+
+        var SecondaryPixelImage="";
+        if ( SecondaryPixelImage.indexOf("http")==0 ) {
+            document.write('<img src="' + SecondaryPixelImage  + '" height="1" width="1" />');
+        }
+
+        var JSImpressionTagURL="";
+        if ( JSImpressionTagURL.indexOf("http")==0 ) {
+            var jsTag = document.createElement('script');
+            jsTag.setAttribute('src', JSImpressionTagURL);
+            jsTag.async = true;
+
+            window.parent.document.getElementsByTagName('head')[0].appendChild(jsTag);
+        }
+
+    </script>
+</div>
+<script>if (window.top && window.top.postMessage) {window.top.postMessage('{"googMsgType":"adpnt"}','*');}</script><div style="bottom:0;right:0;width:100px;height:100px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:pixelated !important;z-index:2147483647;background-image:url(&#39;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAACASURBVBjTbZABDoAwCANvP+j/X6tboaIRkylZqUfhv5aLtT/Tgc7tfUqjOwr8kG7f6Nbtk3prqnsmavrU8A5JaYskJX24iZZ4o8I5A+ohO2fJWB4N5vayorfzih3RBDFL2T+kE2MmyABPCoVD/SQJFr2HngTNMQh6xivqnSAr5lwnEwWcuvauLQAAAABJRU5ErkJggg==&#39;) !important;"></div></body></html>
